@@ -5,9 +5,14 @@ import Search from './search.tsx';
 export default function Main() {
   return (
     <main>
-      <Search />
-      <Filter />
-      <Gallery />
+      <section>
+        <Search />
+        <Filter />
+      </section>
+
+      <section>
+        <Gallery />
+      </section>
     </main>
   );
 }

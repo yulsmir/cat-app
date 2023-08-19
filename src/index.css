@@ -129,7 +129,7 @@ footer {
   font-family: 'Open Sans', sans-serif;
 }
 
-/* navbar styling */
+/*---- NAVBAR STYLING ----*/
 #navbar {
   display: flex;
   align-items: center;
@@ -186,6 +186,14 @@ footer {
 
 #navbar #menu li a:hover {
   color: #16a7b8;
+}
+
+/*---- FOOTER ----*/
+footer {
+  background: #333;
+  padding: 15px 20px;
+  color: #fff;
+  text-align: center;
 }
 
 /* responsive media query start */
