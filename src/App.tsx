@@ -1,13 +1,13 @@
 import './App.css';
 
-import Gallery from './components/gallery/gallery.tsx';
+import Main from './components/main/main.tsx';
 import Navbar from './components/nav/navbar.tsx';
 
 function App() {
   return (
     <>
       <Navbar />
-      <Gallery />
+      <Main />
     </>
   );
 }
