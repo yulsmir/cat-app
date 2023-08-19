@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -66,4 +66,146 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+/*=== Custom styles ====*/
+:root {
+  /* Colors used */
+  --primary-color: #333;
+  --page-style: #16a7b8;
+  --bg-color: #fefefe;
+  /* Font weight */
+  --light-weight: 300;
+  --regular-weight: 400;
+  --bold-weight: 600;
+  --extrabold-weight: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Similar styling codes */
+section {
+  padding: 100px 0;
+}
+
+.container {
+  max-width: 1300px;
+  padding: 0 80px;
+  margin: auto;
+}
+
+.home,
+.about,
+.cats,
+.contact,
+footer {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* navbar styling */
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  padding: 30px 0;
+  font-family: 'Open Sans', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+  padding: 10px 0;
+  background: #fefefe;
+}
+
+.navbar.sticky .menu li a {
+  color: #333;
+}
+
+.navbar.sticky .logo a {
+  color: #333;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.navbar .logo a {
+  color: #333;
+}
+
+.navbar .logo a span {
+  color: #16a7b8;
+  transition: all 0.3s ease;
+}
+
+.navbar .menu li {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.navbar .menu li a {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  font-size: 20px;
+  font-weight: 400;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+  color: #16a7b8;
+}
+
+/* responsive media query start */
+@media (max-width: 1104px) {
+}
+
+@media (max-width: 991px) {
+  .container {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 947px) {
+}
+
+@media (max-width: 690px) {
+}
+
+@media (max-width: 500px) {
 }

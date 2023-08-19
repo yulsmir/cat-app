@@ -1,3 +1,3 @@
 export default function CatAnimation() {
-  return <p>cat</p>;
+  return <p>cat animation</p>;
 }

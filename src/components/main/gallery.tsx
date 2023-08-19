@@ -10,6 +10,8 @@ export default function Gallery() {
       <CatCard />
       <CatCard />
       <CatCard />
+      <CatCard />
+      <CatCard />
     </section>
   );
 }
