@@ -1,9 +1,15 @@
 import './App.css';
 
 import Gallery from './components/gallery/gallery.tsx';
+import Navbar from './components/nav/navbar.tsx';
 
 function App() {
-  return <Gallery />;
+  return (
+    <>
+      <Navbar />
+      <Gallery />
+    </>
+  );
 }
 
 export default App;
