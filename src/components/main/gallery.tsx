@@ -1,4 +1,5 @@
 import CatCard from './catCard';
+import Headline from '../headline/headline';
 
 export default function Gallery() {
   // GET DATA FROM CAT API
@@ -24,7 +25,9 @@ export default function Gallery() {
 
   return (
     <section>
-      <h1>Amazing cats</h1>
+      <Headline className="headline" element="h1">
+        Amazing cats
+      </Headline>
       <CatCard />
       <CatCard />
       <CatCard />
