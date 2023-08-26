@@ -1,23 +1,15 @@
-import CatAnimation from './catAnimation';
+import Logo from '../logo/logo';
+// interface NavBarProps extends Omit<React.HTMLAttributes<HTMLHeadingElement>, 'children'> {
+//   element: 'nav';
+//   children: string;
+// }
 
-interface NavBarProps extends Omit<React.HTMLAttributes<HTMLHeadingElement>, 'children'> {
-  element: 'nav';
-  children: string;
-}
-
-const Navbar = ({ className, element, children, ...rest }: FooterProps) => {
-  // const Navbar = element;
-
-  // return (
-  //   <Navbar {...rest} className={className}>
-  //     {children}
-  //   </Navbar>
-
+const Navbar = () => {
   return (
     <>
       <div id="navbar">
         <div id="logo">
-          <CatAnimation />
+          <Logo element="div">cat logo</Logo>
         </div>
         <ul id="menu">
           <li>
