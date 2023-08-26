@@ -1,6 +1,18 @@
 import CatAnimation from './catAnimation';
 
-export default function Navbar() {
+interface NavBarProps extends Omit<React.HTMLAttributes<HTMLHeadingElement>, 'children'> {
+  element: 'nav';
+  children: string;
+}
+
+const Navbar = ({ className, element, children, ...rest }: FooterProps) => {
+  // const Navbar = element;
+
+  // return (
+  //   <Navbar {...rest} className={className}>
+  //     {children}
+  //   </Navbar>
+
   return (
     <>
       <div id="navbar">
@@ -35,4 +47,6 @@ export default function Navbar() {
       </div>
     </>
   );
-}
+};
+
+export default Navbar;
