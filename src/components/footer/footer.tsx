@@ -1,9 +1,18 @@
-export default function Footer() {
-  return (
-    <>
-      <h3>footer</h3>
-      <p>Copyright</p>
-      <p>Some info</p>
-    </>
-  );
+import './footer.css';
+
+interface FooterProps extends Omit<React.HTMLAttributes<HTMLHeadingElement>, 'children'> {
+  element: 'footer';
+  children: string;
 }
+
+const Footer = ({ className, element, children, ...rest }: FooterProps) => {
+  const Footer = element;
+
+  return (
+    <Footer {...rest} className={className}>
+      {children}
+    </Footer>
+  );
+};
+
+export default Footer;
