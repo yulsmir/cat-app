@@ -24,18 +24,20 @@ export default function Gallery() {
   // };
 
   return (
-    <section>
+    <section id="gallery">
       <Headline className="headline" element="h1">
         Amazing cats
       </Headline>
-      <CatCard />
-      <CatCard />
-      <CatCard />
-      <CatCard />
-      <CatCard />
-      <CatCard />
-      <CatCard />
-      <CatCard />
+      <div id="container">
+        <CatCard />
+        <CatCard />
+        <CatCard />
+        <CatCard />
+        <CatCard />
+        <CatCard />
+        <CatCard />
+        <CatCard />
+      </div>
     </section>
   );
 }

@@ -11,7 +11,9 @@ export default function Main() {
       </section>
 
       <section>
-        <Gallery />
+        <div id="container">
+          <Gallery />
+        </div>
       </section>
     </main>
   );

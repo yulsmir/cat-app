@@ -1,0 +1,12 @@
+/* ----- FOOTER -----*/
+footer {
+  background: #333;
+  padding: 15px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+footer span a {
+  color: #16a7b8;
+  text-decoration: none;
+}
