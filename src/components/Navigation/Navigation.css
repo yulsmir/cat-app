@@ -1,6 +1,7 @@
 .navigation {
   /* padding: 1rem; */
   /* gap: 2rem; */
+  color: white;
 }
 
 .page-title {
@@ -15,13 +16,14 @@
 }
 
 .title:hover {
-  color: #0c4492;
+  color: whitesmoke;
 }
 
 .active {
   font-size: 2rem;
   text-decoration: none;
-  color: #0c4492;
+  color: whitesmoke;
+  opacity: 100%;
 }
 
 .navigation-list {
@@ -33,6 +35,7 @@
   margin-block-end: 1.5rem;
   display: inline;
   padding-left: 5rem;
+  opacity: 80%;
 }
 
 .item-link {
@@ -42,5 +45,6 @@
 }
 
 .item-link:hover {
-  color: #0c4492;
+  color: white;
+  opacity: 100%;
 }
