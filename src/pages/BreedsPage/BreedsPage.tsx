@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Headline from '../../components/Headline/Headline';
 
 function BreedsPage() {
