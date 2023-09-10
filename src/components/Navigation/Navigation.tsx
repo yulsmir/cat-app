@@ -40,6 +40,12 @@ function Navigation() {
               Favorites
             </NavLink>
           </li>
+
+          <li className="list-item">
+            <NavLink to="/game" className={location.pathname === '/game' ? 'active' : 'title'}>
+              Game
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </>
