@@ -8,17 +8,18 @@ import HomePage from './pages/HomePage';
 import VotePage from './pages/VotePage';
 import BreedsPage from './pages/BreedsPage/BreedsPage';
 import ImagesSearchPage from './pages/ImagesSearchPage/ImagesSearchPage';
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 
 function App() {
   return (
     <main>
-      {/* Routes */}
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/vote" element={<VotePage />} />
         <Route path="/breeds" element={<BreedsPage />} />
         <Route path="/images-search" element={<ImagesSearchPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
     </main>
   );
