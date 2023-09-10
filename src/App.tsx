@@ -10,6 +10,7 @@ import BreedsPage from './pages/BreedsPage/BreedsPage';
 import ImagesSearchPage from './pages/ImagesSearchPage/ImagesSearchPage';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import GamePage from './pages/GamePage/GamePage';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/game" element={<GamePage />} />
       </Routes>
+      <Footer />
     </main>
   );
 }
