@@ -1,7 +1,12 @@
 import './App.css';
-import HomePage from './pages/HomePage';
+
 import { Route, Routes } from 'react-router-dom';
+
 import Header from './components/Header/Header';
+
+import HomePage from './pages/HomePage';
+import VotePage from './pages/VotePage';
+import BreedsPage from './pages/BreedsPage/BreedsPage';
 
 function App() {
   return (
@@ -10,6 +15,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/vote" element={<VotePage />} />
+        <Route path="/breeds" element={<BreedsPage />} />
       </Routes>
     </main>
   );
