@@ -10,7 +10,7 @@
 }
 
 .title {
-  font-size: 2rem;
+  /* font-size: 2rem; */
   text-decoration: none;
   color: inherit;
 }
@@ -20,7 +20,7 @@
 }
 
 .active {
-  font-size: 2rem;
+  /* font-size: 2rem; */
   text-decoration: none;
   color: aquamarine;
   opacity: 100%;
