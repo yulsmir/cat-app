@@ -8,6 +8,7 @@ function BreedsList({ data, ...rest }: BreedsListProps) {
       {data?.map((data, index) => (
         <li key={index} className="list-item">
           {data}
+          console.log(data);
         </li>
       ))}
     </ul>

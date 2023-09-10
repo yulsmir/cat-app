@@ -20,9 +20,8 @@
 }
 
 .active {
-  /* font-size: 2rem; */
   text-decoration: none;
-  color: aquamarine;
+  color: darkseagreen;
   opacity: 100%;
 }
 

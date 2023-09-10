@@ -8,7 +8,7 @@ function HomePage() {
         Welcome to my CatApp.
       </Headline>
       <Headline element="h3" className="welcome-text">
-        Because everyday is a Caturday.
+        Everyday is a Caturday.
       </Headline>
       <RandomCatImage />
     </section>
