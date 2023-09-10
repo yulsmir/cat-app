@@ -32,7 +32,7 @@ function RandomCatImage() {
   }, []);
 
   return (
-    <div>
+    <picture className="random-cat-image">
       {isLoading ? (
         <p>Loading...</p>
       ) : catImageUrl ? (
@@ -40,7 +40,7 @@ function RandomCatImage() {
       ) : (
         <p>No cat image available</p>
       )}
-    </div>
+    </picture>
   );
 }
 
