@@ -36,13 +36,33 @@ function BreedsPage() {
       <Headline element="h3" className="welcome-text">
         BreedsPage
       </Headline>
-      <div className="breed-wrapper">
+      {/* <div className="breed-wrapper">
         {isLoading ? (
           <p>Loading...</p>
         ) : error ? (
           <p>Error: {error.message}</p>
         ) : (
           breeds.map((breed) => <div key={breed.id}>{breed.name}</div>)
+        )}
+      </div> */}
+      <div className="breed-wrapper">
+        {isLoading ? (
+          <p>Loading...</p>
+        ) : error ? (
+          <p>Error: {error.message}</p>
+        ) : (
+          breeds.map((breed) => (
+            <div key={breed.id}>
+              <h4>{breed.name}</h4>
+              <ul>
+                {Object.entries(breed).map(([key, value]) => (
+                  <li key={key}>
+                    <strong>{key}:</strong> {value.toString()}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
         )}
       </div>
     </section>
