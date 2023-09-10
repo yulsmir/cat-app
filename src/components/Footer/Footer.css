@@ -1,8 +1,7 @@
+/* ----- FOOTER -----*/
 footer {
-  left: 0;
-  bottom: 0;
-  height: 2rem;
-  width: 100%;
-  background-color: black;
-  color: white;
+  background: #333;
+  padding: 15px 20px;
+  color: #fff;
+  text-align: center;
 }
