@@ -59,19 +59,20 @@ function BreedsPage() {
               <Headline element="h4" className="welcome-text">
                 {breed.name}
               </Headline>
-              {/* <p>{breed.id}</p>
+
+              <p>{breed.id}</p>
               <p>{breed.temperament}</p>
 
-              <img src={breed.url} /> */}
+              <img src={breed.url} />
 
-              <ul>
+              {/* <ul>
                 {Object.entries(breed).map(([key, value]) => (
                   <li key={key}>
                     <strong>{key}:</strong> {value.toString()}
                   </li>
                 ))}
                 //{' '}
-              </ul>
+              </ul> */}
             </div>
           ))
         )}
