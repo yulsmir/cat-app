@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Headline from '../../components/Headline/Headline';
+import './BreedPage.css';
 
 function BreedsPage() {
   const [breeds, setBreeds] = useState<any[]>([]); // Fixed
@@ -33,7 +34,7 @@ function BreedsPage() {
 
   return (
     <section>
-      <Headline element="h3" className="welcome-text">
+      <Headline element="h1" className="welcome-text">
         BreedsPage
       </Headline>
       {/* <div className="breed-wrapper">
@@ -54,8 +55,10 @@ function BreedsPage() {
           <p>Error: {error}</p>
         ) : (
           breeds.map((breed) => (
-            <div key={breed.id}>
-              <h4>{breed.name}</h4>
+            <div key={breed.id} className="breed-card">
+              <Headline element="h4" className="welcome-text">
+                {breed.name}
+              </Headline>
               <p>{breed.id}</p>
 
               {/* <ul>

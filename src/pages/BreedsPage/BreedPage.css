@@ -1,0 +1,9 @@
+.breed-card {
+  min-width: 18.75rem;
+}
+
+.breed-wrapper {
+  display: flex;
+  flex-flow: wrap;
+  gap: 10rem;
+}
