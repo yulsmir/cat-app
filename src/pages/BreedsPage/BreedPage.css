@@ -1,5 +1,13 @@
 .breed-card {
   min-width: 18.75rem;
+  background: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 17%;
+  /* height: 200px; */
+  margin-bottom: 1em;
 }
 
 .breed-wrapper {

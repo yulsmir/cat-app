@@ -1,7 +1,7 @@
 export interface Breed {
   id: string;
   name: string;
-  cfa_url: string;
+  url: string;
   vetstreet_url: string;
   vcahospitals_url: string;
   temperament: string;
