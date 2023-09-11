@@ -4,4 +4,8 @@ header {
   align-items: center;
   align-content: space-between;
   justify-content: space-between;
+  top: 0;
+  z-index: 30;
+  position: fixed;
+  width: 100vw;
 }
