@@ -3,7 +3,7 @@ footer {
   padding: 15px 20px;
   color: #fff;
   text-align: center;
-  position: inherit;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }
