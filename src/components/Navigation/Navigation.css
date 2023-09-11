@@ -28,6 +28,7 @@
 .navigation-list {
   list-style: none;
   padding: 0;
+  font-size: 1.5rem;
 }
 
 .list-item {
@@ -46,4 +47,5 @@
 .item-link:hover {
   color: white;
   opacity: 100%;
+  font-size: 2rem;
 }
