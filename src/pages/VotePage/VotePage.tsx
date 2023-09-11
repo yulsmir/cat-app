@@ -1,11 +1,13 @@
 import Headline from '../../components/Headline/Headline';
+import RandomCatImage from '../../components/RandomCatImage/RandomCatImage';
 
 function VotePage() {
   return (
     <section>
-      <Headline element="h3" className="welcome-text">
-        VotePage
+      <Headline element="h5" className="welcome-text">
+        Vote for a cat
       </Headline>
+      <RandomCatImage />
     </section>
   );
 }
