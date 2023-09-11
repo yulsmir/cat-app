@@ -60,6 +60,8 @@ function BreedsPage() {
                 {breed.name}
               </Headline>
               {/* <p>{breed.id}</p>
+              <p>{breed.temperament}</p>
+
               <img src={breed.url} /> */}
 
               <ul>
@@ -68,6 +70,7 @@ function BreedsPage() {
                     <strong>{key}:</strong> {value.toString()}
                   </li>
                 ))}
+                //{' '}
               </ul>
             </div>
           ))

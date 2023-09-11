@@ -8,6 +8,11 @@ function VotePage() {
         Vote for a cat
       </Headline>
       <RandomCatImage />
+      <div id="vote-options" className="vote-options">
+        <button onClick="vote(1)">Vote Up </button>
+        <button onClick="vote(-1)">Vote Down </button>
+        <button onClick="showHistoricVotes()">History </button>
+      </div>
     </section>
   );
 }
