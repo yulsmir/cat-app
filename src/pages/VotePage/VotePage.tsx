@@ -1,5 +1,6 @@
 import Headline from '../../components/Headline/Headline';
 import RandomCatImage from '../../components/RandomCatImage/RandomCatImage';
+import Button from '../../components/Button/Button';
 
 function VotePage() {
   return (
@@ -9,9 +10,9 @@ function VotePage() {
       </Headline>
       <RandomCatImage />
       <div id="vote-options" className="vote-options">
-        <button onClick="vote(1)">Vote Up </button>
-        <button onClick="vote(-1)">Vote Down </button>
-        <button onClick="showHistoricVotes()">History </button>
+        <Button>Vote up</Button>
+        <Button>Vote down</Button>
+        <Button>History</Button>
       </div>
     </section>
   );
