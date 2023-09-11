@@ -1,0 +1,49 @@
+.navigation {
+  /* padding: 1rem; */
+  /* gap: 2rem; */
+  color: white;
+}
+
+.page-title {
+  font-size: 4rem;
+  color: inherit;
+}
+
+.title {
+  /* font-size: 2rem; */
+  text-decoration: none;
+  color: inherit;
+}
+
+.title:hover {
+  color: whitesmoke;
+}
+
+.active {
+  text-decoration: none;
+  color: darkseagreen;
+  opacity: 100%;
+}
+
+.navigation-list {
+  list-style: none;
+  padding: 0;
+}
+
+.list-item {
+  margin-block-end: 1.5rem;
+  display: inline;
+  padding-left: 5rem;
+  opacity: 80%;
+}
+
+.item-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.75rem;
+}
+
+.item-link:hover {
+  color: white;
+  opacity: 100%;
+}
