@@ -32,7 +32,7 @@ function BreedsPage() {
   //   fetchBreeds();
   // }, []);
 
-  const { data, isLoading, isError } = useFetch<Breed[]>('https://api.thecatapi.com/v1/bree');
+  const { data, isLoading, isError } = useFetch<Breed[]>('https://api.thecatapi.com/v1/breeds');
 
   if (isLoading) {
     return <h1>Loading...</h1>;
