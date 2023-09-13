@@ -1,4 +1,4 @@
-export interface Breed {
+export type Breed = {
   id: string;
   name: string;
   url: string;
@@ -34,7 +34,7 @@ export interface Breed {
   wikipedia_url: string;
   hypoallergenic: number;
   reference_image_id: string;
-}
+};
 
 export interface Info {
   count: number;

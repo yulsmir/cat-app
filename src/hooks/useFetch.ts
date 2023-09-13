@@ -15,6 +15,7 @@ export const useFetch = <T>(url: string) => {
         const response = await fetch(url, { signal });
         const data = await response.json();
         setData(data);
+        setIsError(false);
       } catch (error) {
         setIsError(true);
         setError(error as Error);
