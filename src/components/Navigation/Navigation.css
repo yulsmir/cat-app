@@ -1,7 +1,7 @@
 .navigation {
   padding: 2rem;
   /* gap: 2rem; */
-  color: white;
+  color: black;
 }
 
 .page-title {
@@ -16,12 +16,13 @@
 }
 
 .title:hover {
-  color: whitesmoke;
+  color: #16a7b8;
+  opacity: 50%;
 }
 
 .active {
   text-decoration: none;
-  color: darkseagreen;
+  color: #16a7b8;
   opacity: 100%;
 }
 

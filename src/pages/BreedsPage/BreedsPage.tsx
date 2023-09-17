@@ -1,7 +1,9 @@
 import { useFetch } from '../../hooks/useFetch';
-import Headline from '../../components/Headline/Headline';
-import './BreedPage.css';
 import { Breed } from '../../types/types';
+
+import Headline from '../../components/Headline/Headline';
+
+import './BreedPage.css';
 
 function BreedsPage() {
   const { data, isLoading, isError } = useFetch<Breed[]>('https://api.thecatapi.com/v1/breeds');
