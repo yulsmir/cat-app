@@ -13,5 +13,5 @@
 .breed-wrapper {
   display: flex;
   flex-flow: wrap;
-  gap: 10rem;
+  gap: 3rem;
 }
