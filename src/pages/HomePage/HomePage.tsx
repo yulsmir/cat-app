@@ -1,6 +1,6 @@
 import Headline from '../../components/Headline/Headline';
 import RandomCatImage from '../../components/RandomCatImage/RandomCatImage';
-// import Button from '../../components/Button/Button';
+import Button from '../../components/Button/Button';
 
 function HomePage() {
   return (
@@ -13,9 +13,9 @@ function HomePage() {
           Everyday is a Caturday.
         </Headline>
       </div>
-      {/* <div>
+      <div>
         <Button>Random cat</Button>
-      </div> */}
+      </div>
       <div>
         <RandomCatImage />
       </div>

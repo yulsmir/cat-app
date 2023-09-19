@@ -8,4 +8,5 @@ header {
   z-index: 30;
   position: fixed;
   width: 100vw;
+  border-bottom: black 0.0625rem;
 }
