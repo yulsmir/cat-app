@@ -1,5 +1,7 @@
-.random-cat-image {
-  width: 100%;
-  max-width: 40rem;
-  height: auto;
+.random-cat-card {
+  /* border-style: solid; */
+  /* border-width: 4px; */
+  /* border-color: gray; */
+  max-width: 80vw;
+  max-height: 50vh;
 }

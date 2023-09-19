@@ -13,11 +13,10 @@ function HomePage() {
           Everyday is a Caturday.
         </Headline>
       </div>
+
+      <RandomCatImage />
       <div>
         <Button>Random cat</Button>
-      </div>
-      <div>
-        <RandomCatImage />
       </div>
     </section>
   );
