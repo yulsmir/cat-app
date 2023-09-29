@@ -1,8 +1,3 @@
-/* .navigation {
-  padding: 0 2rem;
-  color: black;
-}
-
 .page-title {
   font-size: 4rem;
   color: inherit;
@@ -19,13 +14,13 @@
   opacity: 50%;
 }
 
-.active {
+.item-link {
   text-decoration: none;
-  color: #16a7b8;
-  opacity: 100%;
+  color: inherit;
+  font-size: 1.75rem;
 }
 
-.navigation-list {
+/* .navigation-list {
   list-style: none;
   padding: 0;
   font-size: 1.5rem;
@@ -38,11 +33,7 @@
   opacity: 80%;
 }
 
-.item-link {
-  text-decoration: none;
-  color: inherit;
-  font-size: 1.75rem;
-}
+
 
 .item-link:hover {
   color: white;
