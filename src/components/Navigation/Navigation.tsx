@@ -1,48 +1,93 @@
-import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import './Navigation.css';
+import CatWalk from '../CatWalk/CatWalk';
 
 function Navigation() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const location = useLocation();
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  const openClose = isOpen ? 'open' : '';
+  const hamburger = isOpen ? 'line line-rotate' : 'line';
+
   return (
     <>
-      <nav className="navigation">
-        <ul className="navigation-list">
-          <li className="list-item">
-            <NavLink to="/" className={location.pathname === '/' ? 'active' : 'title'}>
+      <nav className={`nav ${openClose}`}>
+        <div className="nav-options">
+          <CatWalk />
+          <div
+            className={`menu ${openClose}`}
+            onClick={() => {
+              setIsOpen(!isOpen);
+            }}
+          >
+            <span className={hamburger}></span>
+            <span className={hamburger}></span>
+            <span className={hamburger}></span>
+          </div>
+        </div>
+
+        <ul className={`nav-list ${openClose}`}>
+          <li className="nav-item">
+            <NavLink
+              to="/"
+              className={location.pathname === '/' ? 'active' : 'nav-link'}
+              onClick={closeMenu}
+            >
               Home
             </NavLink>
           </li>
-          <li className="list-item">
-            <NavLink to="/vote" className={location.pathname === '/vote' ? 'active' : 'title'}>
+          <li className="nav-item">
+            <NavLink
+              to="/vote"
+              className={location.pathname === '/vote' ? 'active' : 'nav-link'}
+              onClick={closeMenu}
+            >
               Vote
             </NavLink>
           </li>
 
-          <li className="list-item">
-            <NavLink to="/breeds" className={location.pathname === '/breeds' ? 'active' : 'title'}>
+          <li className="nav-item">
+            <NavLink
+              to="/breeds"
+              className={location.pathname === '/breeds' ? 'active' : 'nav-link'}
+              onClick={closeMenu}
+            >
               Breeds
             </NavLink>
           </li>
 
-          <li className="list-item">
+          <li className="nav-item">
             <NavLink
               to="/images-search"
-              className={location.pathname === '/images-search' ? 'active' : 'title'}
+              className={location.pathname === '/images-search' ? 'active' : 'nav-link'}
+              onClick={closeMenu}
             >
               Images/Search
             </NavLink>
           </li>
 
-          <li className="list-item">
+          <li className="nav-item">
             <NavLink
               to="/favorites"
-              className={location.pathname === '/favorites' ? 'active' : 'title'}
+              className={location.pathname === '/favorites' ? 'active' : 'nav-link'}
+              onClick={closeMenu}
             >
               Favorites
             </NavLink>
           </li>
 
-          <li className="list-item">
-            <NavLink to="/game" className={location.pathname === '/game' ? 'active' : 'title'}>
+          <li className="nav-item">
+            <NavLink
+              to="/game"
+              className={location.pathname === '/game' ? 'active' : 'nav-link'}
+              onClick={closeMenu}
+            >
               Game
             </NavLink>
           </li>

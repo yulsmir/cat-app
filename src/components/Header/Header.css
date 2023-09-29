@@ -1,4 +1,4 @@
-header {
+/* header {
   background-color: #ffff;
   display: flex;
   align-items: center;
@@ -11,4 +11,22 @@ header {
   border-color: black;
   border-width: 0 0 6px 0;
   border-style: groove;
+} */
+
+header {
+  background-color: #ffffffbb;
+  backdrop-filter: blur(5px);
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+}
+
+@media (max-width: 767px) {
+  header {
+    height: 6.1rem;
+  }
 }

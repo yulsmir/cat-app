@@ -5,7 +5,7 @@ import CatWalk from '../CatWalk/CatWalk';
 function Header() {
   return (
     <header>
-      <CatWalk />
+      {/* <CatWalk /> */}
       <Navigation />
     </header>
   );
