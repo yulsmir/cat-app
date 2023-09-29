@@ -33,15 +33,15 @@ function RandomCatImage() {
 
   return (
     <div className="random-cat-card">
-      <picture>
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : catImageUrl ? (
-          <img src={catImageUrl} alt="Random Cat" className="random-cat-image" />
-        ) : (
-          <p>No cat image available</p>
-        )}
-      </picture>
+      {/* <picture> */}
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : catImageUrl ? (
+        <img src={catImageUrl} alt="Random Cat" className="random-cat-image" />
+      ) : (
+        <p>No cat image available</p>
+      )}
+      {/* </picture> */}
     </div>
   );
 }
