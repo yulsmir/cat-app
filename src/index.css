@@ -29,22 +29,9 @@ body {
   width: 100vw;
 }
 
-/* picture {
-  width: 100%;
-  height: 18.75rem;
-  object-fit: cover;
-  object-position: bottom;
-} */
-
 section {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-}
-
-@media only screen and (max-width: 480px) {
-  img {
-    /* width: 100%; */
-  }
 }

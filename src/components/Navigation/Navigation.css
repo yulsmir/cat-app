@@ -57,10 +57,6 @@ nav,
   align-items: center;
 }
 
-.nav {
-  height: 2.5rem;
-}
-
 .cat-walk {
   /* font-family: var(--title-font); */
   padding-left: 1rem;
