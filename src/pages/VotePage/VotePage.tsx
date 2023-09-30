@@ -1,6 +1,5 @@
 import Headline from '../../components/Headline/Headline';
 import RandomCatImage from '../../components/RandomCatImage/RandomCatImage';
-import Button from '../../components/Button/Button';
 import Counter from '../../components/Counter/Counter';
 
 function VotePage() {
@@ -13,7 +12,6 @@ function VotePage() {
       <div id="vote-options" className="vote-options">
         <Counter>Vote up</Counter>
         <Counter>Vote down</Counter>
-        <Button>History</Button>
       </div>
     </section>
   );
