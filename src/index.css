@@ -34,5 +34,13 @@ section {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  padding-top: 20%;
+  padding-top: 10%;
+}
+
+/*------------ mobile navigation ------------*/
+
+@media (max-width: 767px) {
+  section {
+    padding-top: 20%;
+  }
 }
