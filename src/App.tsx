@@ -8,6 +8,9 @@ import HomePage from './pages/HomePage';
 import VotePage from './pages/VotePage';
 import BreedsPage from './pages/BreedsPage/BreedsPage';
 import Footer from './components/Footer/Footer';
+import ImagesSearchPage from './pages/ImagesSearchPage/ImagesSearchPage';
+import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
+import GamePage from './pages/GamePage/GamePage';
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/vote" element={<VotePage />} />
         <Route path="/breeds" element={<BreedsPage />} />
+        <Route path="/images-search" element={<ImagesSearchPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/game" element={<GamePage />} />
       </Routes>
       <Footer />
     </main>
