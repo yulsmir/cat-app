@@ -13,7 +13,7 @@ function HomePage() {
         </Headline>
       </div>
 
-      <RandomCatImage />
+      <RandomCatImage showButton={true} />
     </section>
   );
 }
