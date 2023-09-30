@@ -1,8 +1,12 @@
 import { useEffect, useState, useCallback } from 'react';
 import './RandomCatImage.css';
-import Button from '../Button';
+import RandomCatButton from '../RandomCatButton/RandomCatButton';
 
-function RandomCatImage() {
+interface RandomCatImageProps {
+  showButton: boolean;
+}
+
+function RandomCatImage({ showButton }: RandomCatImageProps) {
   const [catImageUrl, setCatImageUrl] = useState('');
   const [isLoading, setIsLoading] = useState(true);
 
@@ -49,7 +53,7 @@ function RandomCatImage() {
           <p>No cat image available</p>
         )}
       </div>
-      <Button onClick={regenerateCatImage}>Random Cat</Button>
+      {showButton && <RandomCatButton onClick={regenerateCatImage} />}
     </>
   );
 }

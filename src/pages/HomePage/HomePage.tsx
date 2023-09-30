@@ -1,6 +1,5 @@
 import Headline from '../../components/Headline/Headline';
 import RandomCatImage from '../../components/RandomCatImage/RandomCatImage';
-import Button from '../../components/Button/Button';
 
 function HomePage() {
   return (

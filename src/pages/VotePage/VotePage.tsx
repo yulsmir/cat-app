@@ -8,7 +8,7 @@ function VotePage() {
       <Headline element="h4" className="welcome-text">
         Vote for a cat
       </Headline>
-      <RandomCatImage />
+      <RandomCatImage showButton={false} />
       <div id="vote-options" className="vote-options">
         <Counter>Vote up</Counter>
         <Counter>Vote down</Counter>
