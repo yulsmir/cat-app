@@ -15,9 +15,6 @@ function HomePage() {
       </div>
 
       <RandomCatImage />
-      <div>
-        <Button>Random cat</Button>
-      </div>
     </section>
   );
 }
