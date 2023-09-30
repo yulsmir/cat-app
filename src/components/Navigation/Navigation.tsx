@@ -61,36 +61,6 @@ function Navigation() {
               Breeds
             </NavLink>
           </li>
-
-          <li className="nav-item">
-            <NavLink
-              to="/images-search"
-              className={location.pathname === '/images-search' ? 'active' : 'nav-link'}
-              onClick={closeMenu}
-            >
-              Images/Search
-            </NavLink>
-          </li>
-
-          <li className="nav-item">
-            <NavLink
-              to="/favorites"
-              className={location.pathname === '/favorites' ? 'active' : 'nav-link'}
-              onClick={closeMenu}
-            >
-              Favorites
-            </NavLink>
-          </li>
-
-          <li className="nav-item">
-            <NavLink
-              to="/game"
-              className={location.pathname === '/game' ? 'active' : 'nav-link'}
-              onClick={closeMenu}
-            >
-              Game
-            </NavLink>
-          </li>
         </ul>
       </nav>
     </>

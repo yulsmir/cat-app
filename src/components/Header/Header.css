@@ -8,9 +8,7 @@
   z-index: 30;
   position: fixed;
   width: 100vw;
-  border-color: black;
-  border-width: 0 0 6px 0;
-  border-style: groove;
+
 } */
 
 header {
@@ -23,6 +21,9 @@ header {
   right: 0;
   bottom: 0;
   z-index: 99999;
+  border-color: black;
+  border-width: 0 0 6px 0;
+  border-style: groove;
 }
 
 @media (max-width: 767px) {
