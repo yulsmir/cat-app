@@ -36,7 +36,7 @@ function Navigation() {
           <li className="nav-item">
             <NavLink
               to="/"
-              className={location.pathname === '/' ? 'active' : 'nav-link'}
+              className={location.pathname === '/' ? 'nav-link active' : 'nav-link'}
               onClick={closeMenu}
             >
               Home
@@ -45,7 +45,7 @@ function Navigation() {
           <li className="nav-item">
             <NavLink
               to="/vote"
-              className={location.pathname === '/vote' ? 'active' : 'nav-link'}
+              className={location.pathname === '/vote' ? 'nav-link active' : 'nav-link'}
               onClick={closeMenu}
             >
               Vote
@@ -55,7 +55,7 @@ function Navigation() {
           <li className="nav-item">
             <NavLink
               to="/breeds"
-              className={location.pathname === '/breeds' ? 'active' : 'nav-link'}
+              className={location.pathname === '/breeds' ? 'nav-link active' : 'nav-link'}
               onClick={closeMenu}
             >
               Breeds
@@ -64,7 +64,7 @@ function Navigation() {
           <li className="nav-item">
             <NavLink
               to="/images-search"
-              className={location.pathname === '/images-search' ? 'active' : 'nav-link'}
+              className={location.pathname === '/images-search' ? 'nav-link active' : 'nav-link'}
               onClick={closeMenu}
             >
               Images/Search
@@ -74,7 +74,7 @@ function Navigation() {
           <li className="nav-item">
             <NavLink
               to="/favorites"
-              className={location.pathname === '/favorites' ? 'active' : 'nav-link'}
+              className={location.pathname === '/favorites' ? 'nav-link active' : 'nav-link'}
               onClick={closeMenu}
             >
               Favorites
@@ -84,7 +84,7 @@ function Navigation() {
           <li className="nav-item">
             <NavLink
               to="/game"
-              className={location.pathname === '/game' ? 'active' : 'nav-link'}
+              className={location.pathname === '/game' ? 'nav-link active' : 'nav-link'}
               onClick={closeMenu}
             >
               Game

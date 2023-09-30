@@ -9,7 +9,7 @@
   color: inherit;
 }
 
-.title:hover {
+.nav-item a:hover {
   color: #16a7b8;
   opacity: 50%;
 }
