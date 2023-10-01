@@ -14,8 +14,7 @@
 header {
   background-color: #ffffffbb;
   backdrop-filter: blur(5px);
-  position: sticky;
-  position: -webkit-sticky;
+  position: fixed;
   width: 100%;
   z-index: 99999;
   border-color: black;

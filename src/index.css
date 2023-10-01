@@ -34,19 +34,18 @@ section {
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  padding-top: 10%;
+  height: 85vh;
 }
 
 /*------------ mobile navigation ------------*/
 
-@media (max-width: 767px) {
+@media (min-width: 767px) {
   section {
-    padding-top: 20%;
   }
 }
 
-@media (max-width: 1248px) {
+@media (min-width: 1248px) {
   section {
-    padding-top: 8%;
+    padding-top: 10%;
   }
 }
