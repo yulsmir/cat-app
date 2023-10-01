@@ -1,6 +1,8 @@
 import { useState } from 'react';
 // import catWalk from '../../assets/cat-walk.gif';
-import catWalk from '../../assets/pixel-cat.gif';
+// import catWalk from '../../assets/pixel-cat.gif';
+// import catWalk from '../../assets/aangry-cat.gif';
+import catWalk from '../../assets/lazy-cat.gif';
 
 import './CatWalk.css';
 
