@@ -19,7 +19,7 @@ function Navigation() {
     <>
       <nav className={`nav ${openClose}`}>
         <div className="nav-options">
-          <CatWalk />
+           <CatWalk />
           <div
             className={`menu ${openClose}`}
             onClick={() => {
