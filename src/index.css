@@ -44,3 +44,9 @@ section {
     padding-top: 20%;
   }
 }
+
+@media (max-width: 1248px) {
+  section {
+    padding-top: 10%;
+  }
+}

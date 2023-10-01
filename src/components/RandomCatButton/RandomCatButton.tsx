@@ -1,4 +1,5 @@
 import Button from '../../components/Button/Button';
+import './RandomCatButton.css';
 
 interface RandomCatButtonProps {
   onClick: () => void;

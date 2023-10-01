@@ -42,6 +42,10 @@ function BreedsPage() {
             <Headline element="h4" className="welcome-text">
               {breed.name}
             </Headline>
+            {/* <ul>
+              <li>{breed.adaptability}</li>
+              <li>{breed.vcahospitals_url}</li>
+            </ul> */}
 
             {/* <p>{breed.id}</p>
               <p>{breed.temperament}</p>

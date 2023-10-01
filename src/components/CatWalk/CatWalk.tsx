@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import catWalk from '../../assets/cat-walk.gif';
-import './CatWalk.css'; // Make sure to adjust the import path to your CSS file
+// import catWalk from '../../assets/cat-walk.gif';
+import catWalk from '../../assets/pixel-cat.gif';
+
+import './CatWalk.css';
 
 function CatWalk() {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  // Function to toggle the animation state
   const toggleAnimation = () => {
     setIsFlipped(!isFlipped);
   };

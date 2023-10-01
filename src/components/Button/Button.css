@@ -7,3 +7,9 @@
   padding-block: 0.75rem;
   background-color: #44b8c6;
 }
+
+@media (max-width: 767px) {
+  .button {
+    /* width: 100%; */
+  }
+}
