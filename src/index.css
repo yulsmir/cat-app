@@ -29,10 +29,9 @@ body {
   width: 100vw;
 }
 
-/* section {
-  height: 85vh;
-} */
-
+section {
+  padding-top: 25%;
+}
 /*------------ mobile navigation ------------*/
 
 @media (min-width: 767px) {
