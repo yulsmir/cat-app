@@ -29,13 +29,9 @@ body {
   width: 100vw;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
+/* section {
   height: 85vh;
-}
+} */
 
 /*------------ mobile navigation ------------*/
 

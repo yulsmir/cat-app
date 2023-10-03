@@ -44,7 +44,7 @@ function RandomCatImage({ showButton }: RandomCatImageProps) {
 
   return (
     <>
-      <div className="random-cat-card">
+      <div className="card home">
         {isLoading ? (
           <p>Loading...</p>
         ) : catImageUrl ? (
@@ -52,8 +52,8 @@ function RandomCatImage({ showButton }: RandomCatImageProps) {
         ) : (
           <p>No cat image available</p>
         )}
+        {showButton && <RandomCatButton onClick={regenerateCatImage} />}
       </div>
-      {showButton && <RandomCatButton onClick={regenerateCatImage} />}
     </>
   );
 }

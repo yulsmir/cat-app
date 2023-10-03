@@ -9,6 +9,7 @@ function VotePage() {
       <Headline element="h4" className="welcome-text">
         Vote for a cat
       </Headline>
+      {/* TODO: fix random cat button - rerender after vote */}
       <RandomCatImage showButton={true} />
       <div id="vote-options" className="vote-options">
         <Counter>Vote up</Counter>
