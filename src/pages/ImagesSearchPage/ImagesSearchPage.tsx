@@ -25,10 +25,10 @@ const ImageGrid = () => {
   }, []);
 
   return (
-    <div className="image-grid">
+    <div className="class-flex">
       {images.map((imageData, index) => (
-        <div key={index} className="col col-lg">
-          <img src={imageData.url} alt={`Cat ${index}`} />
+        <div key={index} className="card">
+          <img className="random-cat-image" src={imageData.url} alt={`Cat ${index}`} />
         </div>
       ))}
     </div>
