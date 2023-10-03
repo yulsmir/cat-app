@@ -12,6 +12,7 @@ import Footer from './components/Footer/Footer';
 import ImagesSearchPage from './pages/ImagesSearchPage/ImagesSearchPage';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import GamePage from './pages/GamePage/GamePage';
+import ErrorPage from './pages/ErrorPage/ErrorPage';
 
 type Theme = 'light' | 'dark';
 type ThemeContext = { theme: Theme; toggleTheme: () => void };
@@ -38,6 +39,7 @@ function App() {
           <Route path="/images-search" element={<ImagesSearchPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="/game" element={<GamePage />} />
+          <Route path="/error" element={<ErrorPage />} />
         </Routes>
         <Footer />
       </main>

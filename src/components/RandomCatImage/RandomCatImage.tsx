@@ -1,7 +1,7 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import './RandomCatImage.css';
 import RandomCatButton from '../RandomCatButton/RandomCatButton';
-
+import ErrorPage from '../../pages/ErrorPage';
 interface RandomCatImageProps {
   showButton: boolean;
 }
@@ -22,6 +22,7 @@ function RandomCatImage({ showButton }: RandomCatImageProps) {
 
       if (!response.ok) {
         throw new Error('Failed to fetch data');
+        return <ErrorPage />;
       }
 
       const data = await response.json();
@@ -46,11 +47,12 @@ function RandomCatImage({ showButton }: RandomCatImageProps) {
     <>
       <div className="card home">
         {isLoading ? (
-          <p>Loading...</p>
+          <p>Loading catzzzz...</p>
         ) : catImageUrl ? (
           <img src={catImageUrl} alt="Random Cat" className="random-cat-image" />
         ) : (
-          <p>No cat image available</p>
+          // <p>No cat image available</p>
+          <ErrorPage />
         )}
       </div>
       <div>{showButton && <RandomCatButton onClick={regenerateCatImage} />}</div>

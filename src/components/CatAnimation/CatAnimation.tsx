@@ -1,12 +1,11 @@
 import { useState } from 'react';
-// import catWalk from '../../assets/cat-walk.gif';
-// import catWalk from '../../assets/pixel-cat.gif';
-// import catWalk from '../../assets/aangry-cat.gif';
-import catWalk from '../../assets/lazy-cat.gif';
+import './CatAnimation.css';
 
-import './CatWalk.css';
+interface CatAnimationProps {
+  src: string;
+}
 
-function CatWalk() {
+function CatAnimation({ src }: CatAnimationProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const toggleAnimation = () => {
@@ -16,8 +15,8 @@ function CatWalk() {
   return (
     <div className="cat-animation-container">
       <img
-        src={catWalk}
-        alt="CatWalk"
+        src={src}
+        alt="CatAnimation"
         className={`cat-walk ${isFlipped ? 'flipped' : ''}`}
         onAnimationIteration={toggleAnimation}
       />
@@ -25,4 +24,4 @@ function CatWalk() {
   );
 }
 
-export default CatWalk;
+export default CatAnimation;

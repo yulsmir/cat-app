@@ -1,25 +1,56 @@
-import { useFetch } from '../../hooks/useFetch';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Breed } from '../../types/types';
-// import RandomCatImage from '../../components/RandomCatImage/RandomCatImage';
-import BreedCard from '../../components/BreedCard';
-
+// import BreedCard from '../../components/BreedCard';
 import Headline from '../../components/Headline/Headline';
-
 import './BreedPage.css';
+import '../ErrorPage';
+import ErrorPage from '../ErrorPage';
+
+// Function to fetch the data and memoize it
+async function fetchData() {
+  // TEST error
+  const response = await fetch('https://api.thecatapi.com/v1/breedsssss');
+
+  // const response = await fetch('https://api.thecatapi.com/v1/breeds');
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
+  }
+  const data = await response.json();
+  return data;
+}
 
 function BreedsPage() {
-  const { data, isLoading, isError } = useFetch<Breed[]>('https://api.thecatapi.com/v1/breeds');
+  // Use useMemo to memoize the data fetching
+  const memoizedData = useMemo(() => fetchData(), []);
+
+  const [data, setData] = useState<Breed[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    memoizedData
+      .then((data) => {
+        setData(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsError(true);
+        console.error(error);
+        setIsLoading(false);
+      });
+  }, [memoizedData]);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <h1>Meeeeeooowing catz ...</h1>;
   }
 
   if (isError) {
-    return <h1>Damn...</h1>;
+    // return <h1>Puuuurrror...</h1>;
+    return <ErrorPage />;
   }
 
   if (!data?.length) {
-    return <h1>No Cats</h1>;
+    return <h1>No Catz found</h1>;
   }
 
   return (
@@ -27,31 +58,13 @@ function BreedsPage() {
       <Headline element="h1" className="welcome-text">
         BreedsPage
       </Headline>
-      {/* <div className="breed-wrapper">
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : error ? (
-          <p>Error: {error}</p>
-        ) : (
-          breeds.map((breed) => <div key={breed.id}>{breed.name}</div>)
-        )}
-      </div> */}
 
-      {/* TODO: put each breed into a card */}
-
-      <BreedCard></BreedCard>
       <div className="class-flex">
         {data.map((breed: Breed) => (
-          // <RandomCatImage showButton={false}>
           <div key={breed.id} className="breed-card">
             <Headline element="h4" className="welcome-text">
               {breed.name}
             </Headline>
-
-            {/* <p>{breed.id}</p>
-              <p>{breed.temperament}</p>
-
-              <img src={breed.url} /> */}
 
             <ul>
               {Object.entries(breed).map(([key, value]: [string, string | number | object]) => (
@@ -59,10 +72,8 @@ function BreedsPage() {
                   <strong>{key}:</strong> {JSON.stringify(value)}
                 </li>
               ))}
-              //{' '}
             </ul>
           </div>
-          // </RandomCatImage>
         ))}
       </div>
     </section>

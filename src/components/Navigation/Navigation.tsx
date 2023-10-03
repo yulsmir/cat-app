@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import './Navigation.css';
-import CatWalk from '../CatWalk/CatWalk';
+import CatAnimation from '../CatAnimation/CatAnimation';
+import LazyCat from '../../assets/lazy-cat.gif';
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ function Navigation() {
     <>
       <nav className={`nav ${openClose}`}>
         <div className="nav-options">
-          <CatWalk />
+          <CatAnimation src={LazyCat} />
           <div
             className={`menu ${openClose}`}
             onClick={() => {
