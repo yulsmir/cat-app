@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { Breed } from '../../types/types';
 // import BreedCard from '../../components/BreedCard';
 import Headline from '../../components/Headline/Headline';
@@ -6,9 +6,9 @@ import './BreedPage.css';
 import '../ErrorPage';
 import ErrorPage from '../ErrorPage';
 
-// Function to fetch the data and memoize it
+// Function to fetch the data and memoize it -- for learning purposes
 async function fetchData() {
-  // TEST error
+  // TODO: TEST error
   const response = await fetch('https://api.thecatapi.com/v1/breedsssss');
 
   // const response = await fetch('https://api.thecatapi.com/v1/breeds');
@@ -20,7 +20,7 @@ async function fetchData() {
 }
 
 function BreedsPage() {
-  // Use useMemo to memoize the data fetching
+  // Use useMemo to memoize the data fetching -- for learning purposes
   const memoizedData = useMemo(() => fetchData(), []);
 
   const [data, setData] = useState<Breed[]>([]);

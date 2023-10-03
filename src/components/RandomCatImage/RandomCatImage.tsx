@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useMemo } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import './RandomCatImage.css';
 import RandomCatButton from '../RandomCatButton/RandomCatButton';
 import ErrorPage from '../../pages/ErrorPage';
