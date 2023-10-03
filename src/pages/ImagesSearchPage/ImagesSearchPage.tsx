@@ -3,7 +3,6 @@ import './ImageSearchPage.css';
 
 interface CatImage {
   url: string;
-  // Add other properties you expect from the API response here
 }
 
 const ImageGrid = () => {
