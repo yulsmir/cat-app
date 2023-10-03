@@ -53,14 +53,14 @@ function BreedsPage() {
 
               <img src={breed.url} /> */}
 
-              {/* <ul>
-              {Object.entries(breed).map(([key, value]: [string, string | number | object]) => (
-                <li key={key}>
-                  <strong>{key}:</strong> {JSON.stringify(value)}
-                </li>
-              ))}
-              //{' '}
-            </ul> */}
+              <ul>
+                {Object.entries(breed).map(([key, value]: [string, string | number | object]) => (
+                  <li key={key}>
+                    <strong>{key}:</strong> {JSON.stringify(value)}
+                  </li>
+                ))}
+                //{' '}
+              </ul>
             </div>
           </RandomCatImage>
         ))}

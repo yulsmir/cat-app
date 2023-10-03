@@ -6,9 +6,15 @@ function Footer() {
 
   return (
     <footer>
-      <p>
-        <small>Copyright © {year} Yuliia Smirnova</small>
-      </p>
+      <span>Copyright © {year} Yuliia Smirnova</span>
+      <div className="social-links">
+        <ul>
+          <li>
+            <a href="">linkedin</a>
+            <a href="">github</a>
+          </li>
+        </ul>
+      </div>
     </footer>
   );
 }
