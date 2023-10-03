@@ -1,6 +1,6 @@
 import { useFetch } from '../../hooks/useFetch';
 import { Breed } from '../../types/types';
-import RandomCatImage from '../../components/RandomCatImage/RandomCatImage';
+// import RandomCatImage from '../../components/RandomCatImage/RandomCatImage';
 import BreedCard from '../../components/BreedCard';
 
 import Headline from '../../components/Headline/Headline';
@@ -42,27 +42,27 @@ function BreedsPage() {
       <BreedCard></BreedCard>
       <div className="class-flex">
         {data.map((breed: Breed) => (
-          <RandomCatImage showButton={false}>
-            <div key={breed.id} className="breed-card">
-              <Headline element="h4" className="welcome-text">
-                {breed.name}
-              </Headline>
+          // <RandomCatImage showButton={false}>
+          <div key={breed.id} className="breed-card">
+            <Headline element="h4" className="welcome-text">
+              {breed.name}
+            </Headline>
 
-              {/* <p>{breed.id}</p>
+            {/* <p>{breed.id}</p>
               <p>{breed.temperament}</p>
 
               <img src={breed.url} /> */}
 
-              <ul>
-                {Object.entries(breed).map(([key, value]: [string, string | number | object]) => (
-                  <li key={key}>
-                    <strong>{key}:</strong> {JSON.stringify(value)}
-                  </li>
-                ))}
-                //{' '}
-              </ul>
-            </div>
-          </RandomCatImage>
+            <ul>
+              {Object.entries(breed).map(([key, value]: [string, string | number | object]) => (
+                <li key={key}>
+                  <strong>{key}:</strong> {JSON.stringify(value)}
+                </li>
+              ))}
+              //{' '}
+            </ul>
+          </div>
+          // </RandomCatImage>
         ))}
       </div>
     </section>

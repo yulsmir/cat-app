@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 import './ImageSearchPage.css';
 
+interface CatImage {
+  url: string;
+  // Add other properties you expect from the API response here
+}
+
 const ImageGrid = () => {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<CatImage[]>([]);
 
   useEffect(() => {
     const url = `https://api.thecatapi.com/v1/images/search?limit=9`;
