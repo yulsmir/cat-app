@@ -5,6 +5,7 @@ import Headline from '../../components/Headline/Headline';
 import './BreedPage.css';
 import '../ErrorPage';
 import ErrorPage from '../ErrorPage';
+import Headline from '../../components/Headline/Headline';
 
 // Function to fetch the data and memoize it -- for learning purposes
 async function fetchData() {
@@ -41,7 +42,13 @@ function BreedsPage() {
   }, [memoizedData]);
 
   if (isLoading) {
-    return <h1>Meeeeeooowing catz ...</h1>;
+    return (
+      <section>
+        <Headline element="h1" className="loading-text">
+          Meeeeeoooloading catz ...
+        </Headline>
+      </section>
+    );
   }
 
   if (isError) {
@@ -50,7 +57,13 @@ function BreedsPage() {
   }
 
   if (!data?.length) {
-    return <h1>No Catz found</h1>;
+    return (
+      <section>
+        <Headline element="h1" className="loading-text">
+          No caaaatz found
+        </Headline>
+      </section>
+    );
   }
 
   return (
