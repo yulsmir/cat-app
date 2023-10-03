@@ -40,6 +40,8 @@ function App() {
           <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="/game" element={<GamePage />} />
           <Route path="/error" element={<ErrorPage />} />
+          {/* For the incorrect routes */}
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
       </main>

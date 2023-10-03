@@ -5,14 +5,13 @@ import Headline from '../../components/Headline/Headline';
 import './BreedPage.css';
 import '../ErrorPage';
 import ErrorPage from '../ErrorPage';
-import Headline from '../../components/Headline/Headline';
 
 // Function to fetch the data and memoize it -- for learning purposes
 async function fetchData() {
   // TODO: TEST error
-  const response = await fetch('https://api.thecatapi.com/v1/breedsssss');
+  // const response = await fetch('https://api.thecatapi.com/v1/breedsssss');
 
-  // const response = await fetch('https://api.thecatapi.com/v1/breeds');
+  const response = await fetch('https://api.thecatapi.com/v1/breeds');
   if (!response.ok) {
     throw new Error('Failed to fetch data');
   }
