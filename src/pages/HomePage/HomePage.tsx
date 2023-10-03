@@ -1,10 +1,11 @@
 import Headline from '../../components/Headline/Headline';
 import RandomCatImage from '../../components/RandomCatImage/RandomCatImage';
+import './HomePage.css';
 
 function HomePage() {
   return (
     <section>
-      <div>
+      <div className="test">
         <Headline element="h2" className="welcome-text">
           Welcome to my CatApp.
         </Headline>

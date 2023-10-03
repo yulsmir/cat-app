@@ -1,4 +1,5 @@
 import './App.css';
+import { createContext, useState } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 
@@ -12,20 +13,35 @@ import ImagesSearchPage from './pages/ImagesSearchPage/ImagesSearchPage';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import GamePage from './pages/GamePage/GamePage';
 
+type Theme = 'light' | 'dark';
+type ThemeContext = { theme: Theme; toggleTheme: () => void };
+
+export const ThemeContext = createContext<ThemeContext>({} as ThemeContext);
+
 function App() {
+  const [theme, setTheme] = useState<Theme>('light');
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
+
+  document.documentElement.setAttribute('data-theme', theme);
+
   return (
-    <main>
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/vote" element={<VotePage />} />
-        <Route path="/breeds" element={<BreedsPage />} />
-        <Route path="/images-search" element={<ImagesSearchPage />} />
-        <Route path="/favorites" element={<FavoritesPage />} />
-        <Route path="/game" element={<GamePage />} />
-      </Routes>
-      <Footer />
-    </main>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <main>
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/vote" element={<VotePage />} />
+          <Route path="/breeds" element={<BreedsPage />} />
+          <Route path="/images-search" element={<ImagesSearchPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
+          <Route path="/game" element={<GamePage />} />
+        </Routes>
+        <Footer />
+      </main>
+    </ThemeContext.Provider>
   );
 }
 
