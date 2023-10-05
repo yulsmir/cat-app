@@ -1,10 +1,11 @@
 import { useEffect, useState, useMemo } from 'react';
 import { Breed } from '../../types/types';
-// import BreedCard from '../../components/BreedCard';
+
 import Headline from '../../components/Headline/Headline';
+import ErrorPage from '../ErrorPage';
+
 import './BreedPage.css';
 import '../ErrorPage';
-import ErrorPage from '../ErrorPage';
 
 // Function to fetch the data and memoize it -- for learning purposes
 async function fetchData() {

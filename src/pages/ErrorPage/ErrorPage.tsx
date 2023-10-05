@@ -1,7 +1,8 @@
-import './ErrorPage.css';
 import Headline from '../../components/Headline';
 import CatAnimation from '../../components/CatAnimation';
 import AngryCat from '../../assets/aangry-cat.gif';
+
+import './ErrorPage.css';
 
 function ErrorPage() {
   return (

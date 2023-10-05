@@ -1,6 +1,7 @@
 import Headline from '../../components/Headline/Headline';
 import RandomCatImage from '../../components/RandomCatImage/RandomCatImage';
 import Counter from '../../components/Counter/Counter';
+
 import './VotePage.css';
 
 function VotePage() {

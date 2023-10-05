@@ -1,10 +1,8 @@
-import './App.css';
 import { createContext, useState } from 'react';
 
 import { Route, Routes } from 'react-router-dom';
 
 import Header from './components/Header/Header';
-
 import HomePage from './pages/HomePage';
 import VotePage from './pages/VotePage';
 import BreedsPage from './pages/BreedsPage/BreedsPage';
@@ -13,6 +11,8 @@ import ImagesSearchPage from './pages/ImagesSearchPage/ImagesSearchPage';
 import FavoritesPage from './pages/FavoritesPage/FavoritesPage';
 import GamePage from './pages/GamePage/GamePage';
 import ErrorPage from './pages/ErrorPage/ErrorPage';
+
+import './App.css';
 
 type Theme = 'light' | 'dark';
 type ThemeContext = { theme: Theme; toggleTheme: () => void };
