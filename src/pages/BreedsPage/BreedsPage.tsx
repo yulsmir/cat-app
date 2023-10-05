@@ -1,11 +1,11 @@
 import { useEffect, useState, useMemo } from 'react';
 import { Breed } from '../../types/types';
-import RandomCatImage from '../../components/RandomCatImage';
 import Headline from '../../components/Headline/Headline';
 import ErrorPage from '../ErrorPage';
 import NotFound from '../NotFound';
 import './BreedPage.css';
 import '../ErrorPage';
+import useRandomCatImage from '../../hooks/useRandomCatImage';
 
 // Function to fetch the data and memoize it -- for learning purposes
 async function fetchData() {
@@ -15,15 +15,6 @@ async function fetchData() {
   const response = await fetch('https://api.thecatapi.com/v1/breeds');
   if (!response.ok) {
     throw new Error('Failed to fetch data');
-  }
-  const data = await response.json();
-  return data;
-}
-
-async function fetchBreedImages(breedId) {
-  const response = await fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`);
-  if (!response.ok) {
-    throw new Error('Failed to fetch breed images');
   }
   const data = await response.json();
   return data;
@@ -49,6 +40,8 @@ function BreedsPage() {
         setIsLoading(false);
       });
   }, [memoizedData]);
+
+  const { catImageUrl, isLoading: isCatImageLoading, fetchRandomCatImage } = useRandomCatImage();
 
   if (isLoading) {
     return (
@@ -81,28 +74,21 @@ function BreedsPage() {
               {breed.name}
             </Headline>
 
-            {/* Dynamic data*/}
-            {/* <ul>
-              {Object.entries(breed).map(([key, value]: [string, string | number | object]) => (
-                <li key={key}>
-                  <strong>{key}:</strong> {JSON.stringify(value)}
-                </li>
-              ))}
-            </ul> */}
             <div>
               <ul>
                 <li>
-                  <img
-                    src="https://cdn2.thecatapi.com/images/oe.jpg"
-                    className="randoom-cat-image"
-                  />
+                  {isCatImageLoading ? (
+                    <p>Loading cat image...</p>
+                  ) : (
+                    <img src={catImageUrl} className="random-cat-image" alt={breed.name} />
+                  )}
                 </li>
                 <li>
                   <strong>Id:</strong>
                   <span>{breed.id}</span>
                 </li>
                 <li>
-                  <a href={breed.wikipedia_url} target="_blank">
+                  <a href={breed.wikipedia_url} target="_blank" rel="noopener noreferrer">
                     Wikipedia
                   </a>
                 </li>
