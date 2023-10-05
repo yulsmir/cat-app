@@ -41,7 +41,7 @@ function BreedsPage() {
       });
   }, [memoizedData]);
 
-  const { catImageUrl, isLoading: isCatImageLoading, fetchRandomCatImage } = useRandomCatImage();
+  const { catImageUrl, isLoading: isCatImageLoading } = useRandomCatImage();
 
   if (isLoading) {
     return (
