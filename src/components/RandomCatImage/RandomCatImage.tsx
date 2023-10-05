@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './RandomCatImage.css';
 import RandomCatButton from '../RandomCatButton/RandomCatButton';
 import ErrorPage from '../../pages/ErrorPage';
-import useRandomCatImage from './useRandomCatImage'; // Import the custom hook
+import useRandomCatImage from '../../hooks/useRandomCatImage'; // Import the custom hook
 
 interface RandomCatImageProps {
   showButton: boolean;
