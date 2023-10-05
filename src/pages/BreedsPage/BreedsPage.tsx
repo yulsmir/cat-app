@@ -1,9 +1,9 @@
 import { useEffect, useState, useMemo } from 'react';
 import { Breed } from '../../types/types';
-
+import RandomCatImage from '../../components/RandomCatImage';
 import Headline from '../../components/Headline/Headline';
 import ErrorPage from '../ErrorPage';
-
+import NotFound from '../NotFound';
 import './BreedPage.css';
 import '../ErrorPage';
 
@@ -15,6 +15,15 @@ async function fetchData() {
   const response = await fetch('https://api.thecatapi.com/v1/breeds');
   if (!response.ok) {
     throw new Error('Failed to fetch data');
+  }
+  const data = await response.json();
+  return data;
+}
+
+async function fetchBreedImages(breedId) {
+  const response = await fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`);
+  if (!response.ok) {
+    throw new Error('Failed to fetch breed images');
   }
   const data = await response.json();
   return data;
@@ -52,18 +61,11 @@ function BreedsPage() {
   }
 
   if (isError) {
-    // return <h1>Puuuurrror...</h1>;
     return <ErrorPage />;
   }
 
   if (!data?.length) {
-    return (
-      <section>
-        <Headline element="h1" className="loading-text">
-          No caaaatz found
-        </Headline>
-      </section>
-    );
+    return <NotFound />;
   }
 
   return (
@@ -79,13 +81,33 @@ function BreedsPage() {
               {breed.name}
             </Headline>
 
-            <ul>
+            {/* Dynamic data*/}
+            {/* <ul>
               {Object.entries(breed).map(([key, value]: [string, string | number | object]) => (
                 <li key={key}>
                   <strong>{key}:</strong> {JSON.stringify(value)}
                 </li>
               ))}
-            </ul>
+            </ul> */}
+            <div>
+              <ul>
+                <li>
+                  <img
+                    src="https://cdn2.thecatapi.com/images/oe.jpg"
+                    className="randoom-cat-image"
+                  />
+                </li>
+                <li>
+                  <strong>Id:</strong>
+                  <span>{breed.id}</span>
+                </li>
+                <li>
+                  <a href={breed.wikipedia_url} target="_blank">
+                    Wikipedia
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         ))}
       </div>
