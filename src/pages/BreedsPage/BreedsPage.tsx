@@ -1,45 +1,35 @@
-import { useEffect, useState, useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { Breed } from '../../types/types';
 import Headline from '../../components/Headline/Headline';
 import ErrorPage from '../ErrorPage';
 import NotFound from '../NotFound';
 import './BreedPage.css';
 import '../ErrorPage';
+
 import useRandomCatImage from '../../hooks/useRandomCatImage';
-
-// Function to fetch the data and memoize it -- for learning purposes
-async function fetchData() {
-  // TODO: TEST error
-  // const response = await fetch('https://api.thecatapi.com/v1/breedsssss');
-
-  const response = await fetch('https://api.thecatapi.com/v1/breeds');
-  if (!response.ok) {
-    throw new Error('Failed to fetch data');
-  }
-  const data = await response.json();
-  return data;
-}
+import { useFetch } from '../../hooks/useFetch'; // Import the useFetch hook
 
 function BreedsPage() {
-  // Use useMemo to memoize the data fetching -- for learning purposes
-  const memoizedData = useMemo(() => fetchData(), []);
+  // Use the imported useFetch hook
+  const {
+    data: breedData,
+    isLoading: isBreedDataLoading,
+    isError: isBreedDataError,
+  } = useFetch<Breed[]>('https://api.thecatapi.com/v1/breeds');
 
-  const [data, setData] = useState<Breed[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [data, setData] = useState<Breed[]>([]);
 
   useEffect(() => {
-    memoizedData
-      .then((data) => {
-        setData(data);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        setIsError(true);
-        console.error(error);
-        setIsLoading(false);
-      });
-  }, [memoizedData]);
+    if (!isBreedDataLoading && !isBreedDataError) {
+      setData(breedData || []);
+      setIsLoading(false);
+    } else if (isBreedDataError) {
+      setIsError(true);
+      setIsLoading(false);
+    }
+  }, [isBreedDataLoading, isBreedDataError, breedData]);
 
   const { catImageUrl, isLoading: isCatImageLoading } = useRandomCatImage();
 
