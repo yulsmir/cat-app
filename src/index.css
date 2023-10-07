@@ -19,6 +19,7 @@
 
 html[data-theme='light'] {
   --primary-background: var(--bg-color);
+  --secondary-foreground: var(--white);
   --primary-font: var(--primary-color);
   --secondary-font: var(--black);
   --nav-text: var(--white);
