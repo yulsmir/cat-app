@@ -73,7 +73,7 @@ function Navigation() {
               Images
             </NavLink>
           </li>
-          <li>
+          <li className="toggle-li">
             <ThemeToggle />
           </li>
         </ul>

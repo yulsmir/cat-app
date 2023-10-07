@@ -202,3 +202,7 @@ nav,
 #dark .line {
   background-color: var(--white-color);
 }
+
+.toggle-li {
+  padding-right: 1rem;
+}
