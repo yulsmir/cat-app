@@ -1,5 +1,4 @@
-// useBreedImage.ts
-import { useEffect, useState } from 'react';
+import { useFetch } from './useFetch'; // Import the useFetch hook
 
 interface BreedImageData {
   imageURL: string | null;
@@ -8,54 +7,23 @@ interface BreedImageData {
 }
 
 const useBreedImage = (breedId?: string): BreedImageData => {
-  const [breedImageData, setBreedImageData] = useState<BreedImageData>({
-    imageURL: null,
-    isLoading: true,
-    error: null,
-  });
+  const {
+    data: imageData,
+    isLoading,
+    isError,
+    error,
+  } = useFetch<{ url: string }>(
+    breedId ? `https://api.thecatapi.com/v1/images/search?limit=1&breed_ids=${breedId}` : '',
+  );
 
-  useEffect(() => {
-    setBreedImageData((prevData) => ({
-      ...prevData,
-      isLoading: true,
-    }));
+  // Explicitly type imageData as an array with an index
+  const typedImageData = imageData as { url: string }[];
 
-    if (breedId) {
-      fetch(`https://api.thecatapi.com/v1/images/search?limit=1&breed_ids=${breedId}`)
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.length > 0) {
-            setBreedImageData({
-              imageURL: data[0].url,
-              isLoading: false,
-              error: null,
-            });
-          } else {
-            setBreedImageData({
-              imageURL: null,
-              isLoading: false,
-              error: null,
-            });
-          }
-        })
-        .catch((error) => {
-          setBreedImageData({
-            imageURL: null,
-            isLoading: false,
-            error: error as Error,
-          });
-        });
-    } else {
-      // Handle the case when breedId is not provided
-      setBreedImageData({
-        imageURL: null,
-        isLoading: false,
-        error: null,
-      });
-    }
-  }, [breedId]);
-
-  return breedImageData;
+  return {
+    imageURL: typedImageData ? typedImageData[0]?.url || null : null,
+    isLoading,
+    error: isError ? error : null,
+  };
 };
 
 export default useBreedImage;

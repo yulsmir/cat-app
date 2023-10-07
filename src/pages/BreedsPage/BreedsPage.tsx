@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Breed } from '../../types/types';
 import Headline from '../../components/Headline/Headline';
 import ErrorPage from '../ErrorPage';
@@ -7,10 +7,9 @@ import './BreedPage.css';
 import '../ErrorPage';
 
 import useRandomCatImage from '../../hooks/useRandomCatImage';
-import { useFetch } from '../../hooks/useFetch'; // Import the useFetch hook
+import { useFetch } from '../../hooks/useFetch';
 
 function BreedsPage() {
-  // Use the imported useFetch hook
   const {
     data: breedData,
     isLoading: isBreedDataLoading,
@@ -21,15 +20,28 @@ function BreedsPage() {
   const [isError, setIsError] = useState(false);
   const [data, setData] = useState<Breed[]>([]);
 
-  useEffect(() => {
-    if (!isBreedDataLoading && !isBreedDataError) {
-      setData(breedData || []);
-      setIsLoading(false);
-    } else if (isBreedDataError) {
+  // Memoize the fetchData function using useCallback
+  const fetchData = useCallback(async () => {
+    setIsLoading(true);
+
+    try {
+      if (!isBreedDataLoading && !isBreedDataError) {
+        setData(breedData || []);
+        setIsLoading(false);
+      } else if (isBreedDataError) {
+        setIsError(true);
+        setIsLoading(false);
+      }
+    } catch (error) {
       setIsError(true);
       setIsLoading(false);
+      console.error(error);
     }
   }, [isBreedDataLoading, isBreedDataError, breedData]);
+
+  useEffect(() => {
+    fetchData(); // Use the memoized function here
+  }, [fetchData]);
 
   const { catImageUrl, isLoading: isCatImageLoading } = useRandomCatImage();
 
