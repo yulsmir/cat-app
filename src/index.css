@@ -16,32 +16,27 @@
   --dark-grey: rgb(83, 83, 83);
   --light-grey: rgb(206, 206, 206);
   --white: rgb(255, 255, 255);
-  --white-sheer: rgba(255, 255, 255, 0.8);
-  --orange: rgb(255, 165, 0);
-  --purple: rgb(136, 0, 255);
 }
 
 html[data-theme='dark'] {
   --primary-foreground: var(--white-sheer);
   --secondary-foreground: var(--white);
-  --tertiary-foreground: var(--white-sheer);
-  --quaternary-foreground: var(--purple);
   --primary-font: var(--primary-color);
   --secondary-background: var(--black-sheer);
   --tertiary-background: var(--black);
-  --nav-text: var(--black);
   --nav-text: var(--white);
+  --card-bg: var(--light-grey);
 }
 
 html[data-theme='light'] {
   --primary-foreground: var(--black);
   --secondary-foreground: var(--dark-grey);
   --tertiary-foreground: var(--white);
-  --quaternary-foreground: var(--orange);
   --primary-font: var(--white);
   --secondary-background: var(--white-sheer);
   --tertiary-background: var(--black);
   --nav-text: var(--black);
+  --card-bg: var(--white);
 }
 
 * {

@@ -38,6 +38,7 @@ image {
 
 .card {
   padding: 2em;
+  background-color: var(--card-bg);
 }
 
 .read-the-docs {
