@@ -71,7 +71,7 @@ function Navigation() {
               className={location.pathname === '/images-search' ? 'nav-link active' : 'nav-link'}
               onClick={closeMenu}
             >
-              Images/Search
+              Images
             </NavLink>
           </li>
         </ul>

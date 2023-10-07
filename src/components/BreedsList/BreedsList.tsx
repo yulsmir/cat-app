@@ -12,7 +12,7 @@ function BreedsList({ data, ...rest }: BreedsListProps) {
         {/* console.log(item); */}
       </li>
     ));
-  }, [data]); // Re-run when data changes
+  }, [data]);
 
   return (
     <ul {...rest} className="list">
