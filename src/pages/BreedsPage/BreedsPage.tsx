@@ -8,6 +8,7 @@ import '../ErrorPage';
 
 import useRandomCatImage from '../../hooks/useRandomCatImage';
 import { useFetch } from '../../hooks/useFetch';
+import BreedList from '../../components/BreedsList/BreedsList';
 
 function BreedsPage() {
   const {
@@ -69,30 +70,8 @@ function BreedsPage() {
         Breeds
       </Headline>
 
-      <div className="class-flex">
-        {data.map((breed: Breed) => (
-          <div key={breed.id} className="breed-card card">
-            <div>
-              <ul>
-                <li>
-                  {isCatImageLoading ? (
-                    <p>Loading cat image...</p>
-                  ) : (
-                    <img src={catImageUrl} className="random-cat-image" alt={breed.name} />
-                  )}
-                </li>
-
-                <li>{breed.name}</li>
-                <li>
-                  <a href={breed.wikipedia_url} target="_blank" rel="noopener noreferrer">
-                    Wikipedia
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        ))}
-      </div>
+      {/* Render the BreedList component with the required props */}
+      <BreedList breeds={data} catImageUrl={catImageUrl} isCatImageLoading={isCatImageLoading} />
     </section>
   );
 }

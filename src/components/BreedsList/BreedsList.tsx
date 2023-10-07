@@ -1,24 +1,25 @@
-import { BreedsListProps } from './BreedsList.types';
-import { useMemo } from 'react';
+import { Breed } from '../../types/types';
+import BreedCard from '../BreedCard';
 
-import './BreedsList.css';
+interface BreedListProps {
+  breeds: Breed[];
+  catImageUrl: string;
+  isCatImageLoading: boolean;
+}
 
-function BreedsList({ data, ...rest }: BreedsListProps) {
-  // Use useMemo to memoize the mapped array of breeds
-  const mappedData = useMemo(() => {
-    return data?.map((item, index) => (
-      <li key={index} className="list-item">
-        {item}
-        {/* console.log(item); */}
-      </li>
-    ));
-  }, [data]);
-
+function BreedList({ breeds, catImageUrl, isCatImageLoading }: BreedListProps) {
   return (
-    <ul {...rest} className="list">
-      {mappedData}
-    </ul>
+    <div className="class-flex">
+      {breeds.map((breed: Breed) => (
+        <BreedCard
+          key={breed.id}
+          breed={breed}
+          catImageUrl={catImageUrl}
+          isCatImageLoading={isCatImageLoading}
+        />
+      ))}
+    </div>
   );
 }
 
-export default BreedsList;
+export default BreedList;
