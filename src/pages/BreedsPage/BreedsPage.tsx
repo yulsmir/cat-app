@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Breed } from '../../types/types';
 import Headline from '../../components/Headline/Headline';
 import ErrorPage from '../ErrorPage';

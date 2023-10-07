@@ -6,7 +6,7 @@ interface BreedImageData {
   error: null | Error;
 }
 
-const useBreedImage = (breedId?: string): BreedImageData => {
+const useBreedImage = async (breedId?: string): Promise<BreedImageData> => {
   const {
     data: imageData,
     isLoading,
@@ -14,13 +14,13 @@ const useBreedImage = (breedId?: string): BreedImageData => {
     error,
   } = useFetch<{ url: string }>(
     breedId ? `https://api.thecatapi.com/v1/images/search?limit=1&breed_ids=${breedId}` : '',
-  );
-
-  // Explicitly type imageData as an array with an index
-  const typedImageData = imageData as { url: string }[];
+    );
+  
+  // Check if imageData is not null before accessing its properties
+  const imageURL = imageData ? imageData.url : null;
 
   return {
-    imageURL: typedImageData ? typedImageData[0]?.url || null : null,
+    imageURL,
     isLoading,
     error: isError ? error : null,
   };
