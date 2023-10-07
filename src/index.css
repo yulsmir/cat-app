@@ -22,6 +22,8 @@ html[data-theme='light'] {
   --primary-font: var(--primary-color);
   --secondary-font: var(--black);
   --nav-text: var(--white);
+  --footer-text: var(--light-grey);
+  --footer-bg: var(--dark-grey);
   --card-bg: var(--light-grey);
 }
 
@@ -32,6 +34,8 @@ html[data-theme='dark'] {
   --secondary-font: var(--white);
   --nav-text: var(--black);
   --card-bg: var(--white);
+  --footer-bg: var(--black);
+  --footer-text: var(--light-grey);
 }
 
 * {
