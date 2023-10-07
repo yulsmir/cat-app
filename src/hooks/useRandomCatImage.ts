@@ -1,27 +1,43 @@
-import { useEffect, useState } from 'react';
-import { useFetch } from './useFetch';
+import { useEffect, useState, useCallback } from 'react';
 
 function useRandomCatImage() {
   const [catImageUrl, setCatImageUrl] = useState('');
+
   const [isLoading, setIsLoading] = useState(true);
 
-  const { data: catImageData, isLoading: isCatImageDataLoading } = useFetch<{ url: string }>(
-    'https://api.thecatapi.com/v1/images/search',
-    {
-      headers: {
-        'x-api-key': import.meta.env.CAT_API_KEY,
-      },
-    },
-  );
+  const fetchRandomCatImage = useCallback(async () => {
+    setIsLoading(true);
 
-  useEffect(() => {
-    if (!isCatImageDataLoading && catImageData && catImageData.length > 0) {
-      setCatImageUrl(catImageData[0]?.url || '');
+    try {
+      const response = await fetch('https://api.thecatapi.com/v1/images/search', {
+        headers: {
+          'x-api-key': import.meta.env.CAT_API_KEY,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch data');
+      }
+
+      const data = await response.json();
+
+      const imageUrl = data[0]?.url || '';
+
+      setCatImageUrl(imageUrl);
+
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+
       setIsLoading(false);
     }
-  }, [isCatImageDataLoading, catImageData]);
+  }, []);
 
-  return { catImageUrl, isLoading };
+  useEffect(() => {
+    fetchRandomCatImage();
+  }, [fetchRandomCatImage]);
+
+  return { catImageUrl, isLoading, fetchRandomCatImage };
 }
 
 export default useRandomCatImage;

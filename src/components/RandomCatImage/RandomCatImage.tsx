@@ -1,6 +1,9 @@
 import './RandomCatImage.css';
+
 import RandomCatButton from '../RandomCatButton/RandomCatButton';
+
 import ErrorPage from '../../pages/ErrorPage';
+
 import useRandomCatImage from '../../hooks/useRandomCatImage';
 
 interface RandomCatImageProps {
@@ -25,6 +28,7 @@ function RandomCatImage({ showButton }: RandomCatImageProps) {
           <ErrorPage />
         )}
       </div>
+
       <div>{showButton && <RandomCatButton onClick={regenerateCatImage} />}</div>
     </>
   );
