@@ -12,12 +12,12 @@
 } */
 
 header {
-  background-color: #ffffffbb;
+  background-color: var(--secondary-foreground);
   backdrop-filter: blur(5px);
   position: fixed;
   width: 100%;
   z-index: 99999;
-  border-color: black;
+  border-color: var(--black);
   border-width: 0 0 6px 0;
   border-style: groove;
   padding: 0 2rem;

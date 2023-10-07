@@ -16,3 +16,16 @@
   flex-flow: wrap;
   gap: 3rem;
 }
+
+li {
+  color: var(--dark-grey);
+}
+
+a {
+  color: var(--page-style);
+  opacity: 80%;
+}
+
+a:hover {
+  opacity: 100%;
+}

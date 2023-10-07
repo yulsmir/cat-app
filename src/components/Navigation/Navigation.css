@@ -9,6 +9,10 @@
   color: inherit;
 }
 
+.nav-link {
+  color: var(--nav-text);
+}
+
 .nav-item a:hover {
   color: #16a7b8;
   opacity: 50%;
