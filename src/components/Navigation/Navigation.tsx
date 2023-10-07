@@ -3,7 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import './Navigation.css';
 import CatAnimation from '../CatAnimation/CatAnimation';
 import LazyCat from '../../assets/lazy-cat.gif';
-// import ThemeToggle from '../ThemeToggle';
+import ThemeToggle from '../ThemeToggle';
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +23,6 @@ function Navigation() {
         <div className="nav-options">
           <CatAnimation src={LazyCat} />
           {/* TODO: make theme toggle work */}
-          {/* <ThemeToggle /> */}
           <div
             className={`menu ${openClose}`}
             onClick={() => {
@@ -73,6 +72,9 @@ function Navigation() {
             >
               Images
             </NavLink>
+          </li>
+          <li>
+            <ThemeToggle />
           </li>
         </ul>
       </nav>
