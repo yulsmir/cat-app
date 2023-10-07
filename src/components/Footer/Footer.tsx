@@ -6,7 +6,7 @@ function Footer() {
 
   return (
     <footer>
-      <span className="footer-text">Copyright © {year} Yuliia Smirnova</span>
+      <span className="footer-text">CatApp © {year} Yuliia Smirnova</span>
       <div className="social-links">
         {/* <ul>
           <li>
