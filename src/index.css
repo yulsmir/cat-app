@@ -18,6 +18,7 @@
 }
 
 html[data-theme='light'] {
+  --primary-background: var(--bg-color);
   --primary-font: var(--primary-color);
   --secondary-font: var(--black);
   --nav-text: var(--white);
@@ -26,6 +27,7 @@ html[data-theme='light'] {
 
 html[data-theme='dark'] {
   --primary-font: var(--light-grey);
+  --primary-background: var(--dark-grey);
   --secondary-foreground: var(--dark-grey);
   --secondary-font: var(--white);
   --nav-text: var(--black);
