@@ -74,26 +74,6 @@ function Navigation() {
               Images/Search
             </NavLink>
           </li>
-
-          <li className="nav-item">
-            <NavLink
-              to="/favorites"
-              className={location.pathname === '/favorites' ? 'nav-link active' : 'nav-link'}
-              onClick={closeMenu}
-            >
-              Favorites
-            </NavLink>
-          </li>
-
-          <li className="nav-item">
-            <NavLink
-              to="/game"
-              className={location.pathname === '/game' ? 'nav-link active' : 'nav-link'}
-              onClick={closeMenu}
-            >
-              Game
-            </NavLink>
-          </li>
         </ul>
       </nav>
     </>

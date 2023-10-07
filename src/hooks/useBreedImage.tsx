@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Breed } from '../types/types';
 
-function useBreedImage(breedId: Breed.id) {
+function useBreedImage(breedId: Breed) {
   const [imageURL, setImageURL] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [error] = useState(null);

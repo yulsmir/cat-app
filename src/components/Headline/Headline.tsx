@@ -1,7 +1,7 @@
 import './Headline.css';
 
 interface HeadlineProps extends Omit<React.HTMLAttributes<HTMLHeadingElement>, 'children'> {
-  element: 'h1' | 'h2' | 'h3' | 'h4';
+  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
   children?: string;
 }
 

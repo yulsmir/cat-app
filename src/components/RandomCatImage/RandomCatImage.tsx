@@ -1,15 +1,14 @@
-import React, { useEffect } from 'react';
 import './RandomCatImage.css';
 import RandomCatButton from '../RandomCatButton/RandomCatButton';
 import ErrorPage from '../../pages/ErrorPage';
-import useRandomCatImage from '../../hooks/useRandomCatImage'; // Import the custom hook
+import useRandomCatImage from '../../hooks/useRandomCatImage';
 
 interface RandomCatImageProps {
   showButton: boolean;
 }
 
 function RandomCatImage({ showButton }: RandomCatImageProps) {
-  const { catImageUrl, isLoading, fetchRandomCatImage } = useRandomCatImage(); // Use the custom hook
+  const { catImageUrl, isLoading, fetchRandomCatImage } = useRandomCatImage();
 
   const regenerateCatImage = () => {
     fetchRandomCatImage();

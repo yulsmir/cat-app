@@ -8,12 +8,12 @@ function Footer() {
     <footer>
       <span>Copyright © {year} Yuliia Smirnova</span>
       <div className="social-links">
-        <ul>
+        {/* <ul>
           <li>
             <a href="">linkedin</a>
             <a href="">github</a>
           </li>
-        </ul>
+        </ul> */}
       </div>
     </footer>
   );

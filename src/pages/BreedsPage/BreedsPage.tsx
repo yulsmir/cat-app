@@ -64,16 +64,12 @@ function BreedsPage() {
   return (
     <section>
       <Headline element="h1" className="welcome-text">
-        BreedsPage
+        Breeds
       </Headline>
 
       <div className="class-flex">
         {data.map((breed: Breed) => (
-          <div key={breed.id} className="breed-card">
-            <Headline element="h4" className="welcome-text">
-              {breed.name}
-            </Headline>
-
+          <div key={breed.id} className="breed-card card">
             <div>
               <ul>
                 <li>
@@ -83,10 +79,8 @@ function BreedsPage() {
                     <img src={catImageUrl} className="random-cat-image" alt={breed.name} />
                   )}
                 </li>
-                <li>
-                  <strong>Id:</strong>
-                  <span>{breed.id}</span>
-                </li>
+
+                <li>{breed.name}</li>
                 <li>
                   <a href={breed.wikipedia_url} target="_blank" rel="noopener noreferrer">
                     Wikipedia

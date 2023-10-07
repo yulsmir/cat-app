@@ -4,7 +4,7 @@ function FavoritesPage() {
   return (
     <section>
       <Headline element="h3" className="welcome-text">
-        Favorites page
+        Favorites
       </Headline>
     </section>
   );

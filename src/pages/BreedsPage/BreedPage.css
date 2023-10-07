@@ -1,4 +1,4 @@
-.breed-card {
+.breed-card.card {
   min-width: 18.75rem;
   background: #eaeaea;
   display: flex;
@@ -7,8 +7,8 @@
   justify-content: center;
   flex-basis: 17%;
   /* height: 200px; */
-  padding: 1rem;
-  margin-bottom: 1em;
+  /* padding: 1rem;
+  margin-bottom: 1em; */
 }
 
 .breed-wrapper {

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import Headline from '../../components/Headline';
+
 import './ImageSearchPage.css';
 
 interface CatImage {
@@ -31,6 +33,9 @@ const ImageGrid = () => {
 
   return (
     <section>
+      <Headline element="h3" className="welcome-text">
+        Images
+      </Headline>
       <div className="class-flex">
         {images.map((imageData, index) => (
           <div key={index} className="card">
