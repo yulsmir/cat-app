@@ -24,26 +24,9 @@
   font-size: 1.75rem;
 }
 
-/* .navigation-list {
-  list-style: none;
-  padding: 0;
-  font-size: 1.5rem;
+.nav-link.active {
+  color: #16a7b8;
 }
-
-.list-item {
-  margin-block-end: 1.5rem;
-  display: inline;
-  padding-left: 5rem;
-  opacity: 80%;
-}
-
-
-
-.item-link:hover {
-  color: white;
-  opacity: 100%;
-  font-size: 2rem;
-} */
 
 .nav-options {
   display: flex;
@@ -74,7 +57,6 @@ nav,
 
 .nav-item a {
   text-transform: uppercase;
-  /* font-size: var(--small-size); */
   color: black;
 }
 

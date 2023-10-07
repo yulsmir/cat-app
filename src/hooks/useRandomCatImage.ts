@@ -1,43 +1,55 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 
-function useRandomCatImage() {
-  const [catImageUrl, setCatImageUrl] = useState('');
-
+const useRandomCatImage = (breedId?: string) => {
+  const [catImageUrl, setCatImageUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchRandomCatImage = useCallback(async () => {
+  useEffect(() => {
     setIsLoading(true);
 
-    try {
-      const response = await fetch('https://api.thecatapi.com/v1/images/search', {
-        headers: {
-          'x-api-key': import.meta.env.CAT_API_KEY,
-        },
-      });
+    let apiUrl = 'https://api.thecatapi.com/v1/images/search?limit=1';
 
-      if (!response.ok) {
-        throw new Error('Failed to fetch data');
-      }
-
-      const data = await response.json();
-
-      const imageUrl = data[0]?.url || '';
-
-      setCatImageUrl(imageUrl);
-
-      setIsLoading(false);
-    } catch (error) {
-      console.error(error);
-
-      setIsLoading(false);
+    if (breedId) {
+      apiUrl += `&breed_ids=${breedId}`;
     }
-  }, []);
 
-  useEffect(() => {
-    fetchRandomCatImage();
-  }, [fetchRandomCatImage]);
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.length > 0) {
+          setCatImageUrl(data[0].url);
+        } else {
+          setCatImageUrl(null);
+        }
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
+      });
+  }, [breedId]);
+
+  const fetchRandomCatImage = () => {
+    setCatImageUrl(null); // Clear the previous image URL
+    setIsLoading(true);
+
+    fetch('https://api.thecatapi.com/v1/images/search?limit=1')
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.length > 0) {
+          setCatImageUrl(data[0].url);
+        } else {
+          setCatImageUrl(null);
+        }
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setIsLoading(false);
+      });
+  };
 
   return { catImageUrl, isLoading, fetchRandomCatImage };
-}
+};
 
 export default useRandomCatImage;
