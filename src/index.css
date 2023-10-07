@@ -12,29 +12,22 @@
 
 :root {
   --black: rgb(0, 0, 0);
-  --black-sheer: rgba(0, 0, 0, 0.7);
   --dark-grey: rgb(83, 83, 83);
   --light-grey: rgb(206, 206, 206);
   --white: rgb(255, 255, 255);
 }
 
-html[data-theme='dark'] {
-  --primary-foreground: var(--white-sheer);
-  --secondary-foreground: var(--white);
+html[data-theme='light'] {
   --primary-font: var(--primary-color);
-  --secondary-background: var(--black-sheer);
-  --tertiary-background: var(--black);
+  --secondary-font: var(--black);
   --nav-text: var(--white);
   --card-bg: var(--light-grey);
 }
 
-html[data-theme='light'] {
-  --primary-foreground: var(--black);
+html[data-theme='dark'] {
+  --primary-font: var(--light-grey);
   --secondary-foreground: var(--dark-grey);
-  --tertiary-foreground: var(--white);
-  --primary-font: var(--white);
-  --secondary-background: var(--white-sheer);
-  --tertiary-background: var(--black);
+  --secondary-font: var(--white);
   --nav-text: var(--black);
   --card-bg: var(--white);
 }

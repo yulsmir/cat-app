@@ -57,7 +57,7 @@ nav,
 
 .nav-item a {
   text-transform: uppercase;
-  color: black;
+  color: var(--secondary-font);
 }
 
 /*------------ mobile navigation ------------*/
