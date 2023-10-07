@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 import Headline from '../../components/Headline';
 
@@ -31,13 +31,16 @@ const ImageGrid = () => {
       });
   }, []);
 
+  // Memoize the images array using useMemo
+  const memoizedImages = useMemo(() => images, [images]);
+
   return (
     <section>
       <Headline element="h3" className="welcome-text">
         Images
       </Headline>
       <div className="class-flex">
-        {images.map((imageData, index) => (
+        {memoizedImages.map((imageData, index) => (
           <div key={index} className="card">
             <img className="random-cat-image" src={imageData.url} alt={`Cat ${index}`} />
           </div>
