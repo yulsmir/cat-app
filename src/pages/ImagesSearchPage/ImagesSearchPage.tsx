@@ -13,11 +13,10 @@ const ImageGrid = () => {
 
   useEffect(() => {
     const url = `https://api.thecatapi.com/v1/images/search?limit=9`;
-    const api_key = 'DEMO_API_KEY';
 
     fetch(url, {
       headers: {
-        'x-api-key': api_key,
+        'x-api-key': import.meta.env.CAT_API_KEY,
       },
     })
       .then((response) => {
